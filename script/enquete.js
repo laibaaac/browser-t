@@ -1,3 +1,7 @@
+// Hier wordt er bepaalde elementen vanuit mijn formulier in de local storage toegevoegd,
+// ik kan nog even bekijken hoe dit precies gaat werken, even naar tutorials bekijken
+// vergeet niet eigen variabele te zetten, om de local storage te laten werken!!!!!!!!!!!!
+
 if (typeof(Storage) !== "undefined") {
   
     // Get references to the input fields for personal information
