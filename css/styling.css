@@ -1,0 +1,23 @@
+@import url("https://use.typekit.net/edf1wmn.css");
+
+:root {
+    --background-color: lightgray;
+    --fieldset-color:white;
+    --button-color:white;
+    --button-text:black;
+    --nav-color:black;
+    --nav-text:white;
+    --drop-shadow:violet;
+}
+
+@media (prefers-color-scheme: dark ) {
+    :root {
+        --background-color: gray;
+        --fieldset-color:black;
+        --button-color:black;
+        --button-text:white;
+        --nav-color:white;
+        --nav-text:black;
+        --drop-shadow:black;
+    }
+}

@@ -4,66 +4,89 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>browsertech</title>
+    <title>Enquete Browser Technologies</title>
     <link rel="stylesheet" href="css/styling.css">
+    <link rel="stylesheet" href="https://use.typekit.net/edf1wmn.css">
 
 </head>
 <body>
+    <label id="menu"for="show">Menu</label>
+    <input type="checkbox" name="showMenu" id="show">
     <nav>
         <ol>
-            <li><a class="current-page" href="./index.html">Gegevens</a></li>
-            <li><a href="./html/web-app-from-scratch.html">Vak 1</a></li>
-            <li><a href="./html/css-to-rescue.html">Vak 2</a></li>
-            <li><a href="./html/progressive-web-app.html">Vak 3</a></li>
-            <li><a href="./html/browser-technologies.html">Vak 4</a></li>
-            <li><a href="./html/real-time-web.html">Vak 5</a></li>
-            <li><a href="./html/human-centred-design.html">Vak 6</a></li>
-            <li><a href="./html/meesterproef.html">Vak 7</a></li>
-            <li><a href="./html/weekly-nerd.html">Vak 8</a></li>
+            <li><a class="current-page" href="/index.html">Gegevens</a></li>
+            <li><a href="/html/waffs.html">Vak 1</a></li>
+            <li><a href="/html/cttr.html">Vak 2</a></li>
+            <li><a href="/html/pwa.html">Vak 3</a></li>
+            <li><a href="/html/browsert.html">Vak 4</a></li>
+            <li><a href="/html/rtw.html">Vak 5</a></li>
+            <li><a href="/html/hcd.html">Vak 6</a></li>
+            <li><a href="/html/meesterproef.html">Vak 7</a></li>
+            <li><a href="/html/wnerd.html">Vak 8</a></li>
         </ol>
     </nav>
 
 </header>
 <main>
-    <h1>Enquete!!</h1>
-    <p>invullen maar!!!!</p>
+    <h1>Enquete voor de minor Web Development</h1>
 
-    <form action="./html/web-app-from-scratch.html" id="studentgegevens">
-        <!-- Studentgegevens -->
+    <form action="/html/waffs.html" id="studentgegevens">
         <fieldset>
-            <legend>Studentgegevens</legend>
 
+            <legend>Studentengegevens</legend>
 
-            <label for="voornaam">Voornaam*
-                <input type="text" name="voornaam" id="voornaam" aria-required="true" required
-                    placeholder="Vul jouw voornaam in" aria-placeholder="Vul jouw voornaam in">
+            <!-- to be required or not be required that is the question  -->
+            <label for="voornaam">Voornaam
+                <input type="text" 
+                    name="voornaam" 
+                    id="voornaam" 
+                    placeholder="Vul jouw voornaam in" 
+                    aria-placeholder="Vul jouw voornaam in">
             </label>
             
             <br>
 
-            <label for="achternaam">Achternaam*
-                <input type="text" name="achternaam" id="achternaam" aria-required="true" required
-                    placeholder="Vul jouw achternaam  in" aria-placeholder="Vul jouw achternaam in">
+            <label for="achternaam">Achternaam
+                <input type="text"
+                    name="achternaam" 
+                    id="achternaam" 
+                    placeholder="Vul jouw achternaam  in" 
+                    aria-placeholder="Vul jouw achternaam in">
             </label>
             
             <br>
 
-            <label for="studentennummer">Studentennummer*
-                <input type="text" inputmode="numeric" name="studentennummer" required id="studentennummer" placeholder="Bestaat uit 9 cijfers"
-                    aria-placeholder="Bestaat uit 9 cijfers" minlength="1" maxlength="9"  pattern="[5-6][0-9]{8}">
+            <label for="studentennummer">Studentennummer
+
+                <input type="text" 
+                    inputmode="numeric" 
+                    name="studentennummer" 
+                    id="studentennummer" 
+                    placeholder="De nummer bestaat uit 9 cijfers"
+                    aria-placeholder="De nummer bestaat uit 9 cijfers" 
+                    minlength="1" 
+                    maxlength="9"  
+                    pattern="[5-6][0-9]{8}">
             </label>
             
             <br>
 
 
 
-            <label for="email">Email*
-                <input type="email" name="email" id="email" required placeholder="Vul hier jouw email in"
+            <label for="email">Email
+
+                <input type="email" 
+                    name="email"
+                    id="email" 
+                    placeholder="Vul hier jouw email in"
                     aria-placeholder="Vul hier jouw email in">
             </label>
 
+        </fieldset>
+
+            <button class="volgende" type="submit" value="button">Volgende</button>
 
     
-<script src="script/enquete.js"></script>
+<!-- <script src="script/enquete.js"></script> -->
 </body>
 </html>
