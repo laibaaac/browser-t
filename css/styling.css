@@ -1,6 +1,6 @@
-@import url("https://use.typekit.net/edf1wmn.css");
 
-:root {
+
+/* :root {
     --background-color: lightgray;
     --fieldset-color:white;
     --button-color:white;
@@ -20,4 +20,56 @@
         --nav-text:black;
         --drop-shadow:black;
     }
+} */
+
+
+body{
+    font-family: 'Roboto', sans-serif;
+
+}
+
+h1{
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+legend{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+
+fieldset {
+    border: transparent;
+}
+
+
+nav ol {
+    display: flex;
+    list-style: none;
+    gap: 1em;
+    padding: 0;
+}
+
+nav ol li {
+    flex-grow: 1;
+    font-size: 1em;
+    background-color: pink;
+    border-radius: 1em;
+    display: grid;
+    place-content: center;
+    padding: .5em 0 .5em 0;
+}
+
+nav ol li a {
+    color: black;
+    text-decoration: none;
+}
+
+.current-page {
+    opacity: 80%;
+}
+
+nav ol li:has(:not(.current):hover) {
+    filter: drop-shadow(0 0 1em black);
 }
