@@ -16,10 +16,11 @@ const question_6 = document.querySelector("#vraag6");
 
 loadInput();
 
-
 loadInput();
 loadRadioValue();
 loadValueTextarea();
+
+
 
 inputs.forEach(input => {
     input.addEventListener('input', saveInput);
@@ -39,35 +40,27 @@ if (question_1 && question_2) {
 }
 
 function saveInput() {
-    if (localStorage) {
-        inputs.forEach(input => {
-            const inputName = input.name;
-            const inputValue = input.value;
-
-            localStorage.setItem(inputName, inputValue);
-            localStorage.setItem('voornaam', voornaamInput.value);
-            localStorage.setItem('achternaam', achternaamInput.value);
-            localStorage.setItem('studentennummer', studentennummerInput.value);
-
-        });
-    }
+  if (localStorage) {
+      inputs.forEach(input => {
+          const inputName = input.name;
+          const inputValue = input.value;
+          localStorage.setItem(inputName, inputValue);
+      });
+  }
 }
 
 function loadInput() {
-    if (localStorage) {
-        inputs.forEach(input => {
-            const inputName = input.name;
-            let storedValue = localStorage.getItem(inputName);
-
-            voornaamInput.value = localStorage.getItem('voornaam') || '';
-            achternaamInput.value = localStorage.getItem('achternaam') || '';
-            studentennummerInput.value = localStorage.getItem('studentennummer') || '';
-            if (storedValue) {
-                input.value = storedValue;
-            }
-        });
-    }
+  if (localStorage) {
+      inputs.forEach(input => {
+          const inputName = input.name;
+          let storedValue = localStorage.getItem(inputName);
+          if (storedValue) {
+              input.value = storedValue
+          }
+      });
+  }
 }
+
 
 function saveValueOfSelect(input) {
     if (localStorage) {
