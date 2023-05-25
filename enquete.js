@@ -149,16 +149,16 @@ inputRadios.forEach(button => {
 
 
 // loadInput();
-// loadRadioValue();
-// loadValueTextarea();
+loadRadioValue();
+loadValueTextarea();
 
 // inputs.forEach(input => {
 //     input.addEventListener('input', saveInput);
 // });
 
-// inputRadios.forEach(radio => {
-//     radio.addEventListener('change', saveRadioValue);
-// });
+inputRadios.forEach(radio => {
+    radio.addEventListener('change', saveRadioValue);
+});
 
 // inputTextarea.addEventListener('input', saveValueTextarea);
 
@@ -192,70 +192,49 @@ inputRadios.forEach(button => {
 // }
 
 
-// function saveValueOfSelect(input) {
-//     if (typeof localStorage !== 'undefined') {
-//         input.addEventListener('change', function () {
-//             const selectName = this.name;
-//             const selectValue = this.value;
-//             localStorage.setItem(selectName, selectValue);
-//         });
-//     }
-// }
+
+function saveRadioValue() {
+    if (typeof localStorage !== 'undefined') {
+        inputRadios.forEach(radio => {
+            const radioName = radio.name;
+            const radioValue = radio.value;
+            if (radio.checked) {
+                localStorage.setItem(radioName, radioValue);
+            }
+        });
+    }
+}
 
 
-// function loadValueOfSelect(input) {
-//     if (typeof localStorage !== 'undefined') {
-//         const selectName = input.name;
-//         let storedSelectValue = localStorage.getItem(selectName);
+function loadRadioValue() {
+    if (typeof localStorage !== 'undefined') {
+        inputRadios.forEach(input => {
+            const radioName = input.name;
+            let storedValue = localStorage.getItem(radioName);
+            if (storedValue && input.value === storedValue) {
+                input.checked = true;
+            }
+        });
+    }
+}
 
-//         if (storedSelectValue) {
-//             input.value = storedSelectValue;
-//         }
-//     }
-// }
+function saveValueTextarea() {
+    if (typeof localStorage !== 'undefined') {
+        const textareaName = inputTextarea.name;
+        const textareaValue = inputTextarea.value;
+        localStorage.setItem(textareaName, textareaValue);
+    }
+}
 
-// function saveRadioValue() {
-//     if (typeof localStorage !== 'undefined') {
-//         inputRadios.forEach(radio => {
-//             const radioName = radio.name;
-//             const radioValue = radio.value;
-//             if (radio.checked) {
-//                 localStorage.setItem(radioName, radioValue);
-//             }
-//         });
-//     }
-// }
-
-
-// function loadRadioValue() {
-//     if (typeof localStorage !== 'undefined') {
-//         inputRadios.forEach(input => {
-//             const radioName = input.name;
-//             let storedValue = localStorage.getItem(radioName);
-//             if (storedValue && input.value === storedValue) {
-//                 input.checked = true;
-//             }
-//         });
-//     }
-// }
-
-// function saveValueTextarea() {
-//     if (typeof localStorage !== 'undefined') {
-//         const textareaName = inputTextarea.name;
-//         const textareaValue = inputTextarea.value;
-//         localStorage.setItem(textareaName, textareaValue);
-//     }
-// }
-
-// function loadValueTextarea() {
-//     if (typeof localStorage !== 'undefined') {
-//         const textareaName = inputTextarea.name;
-//         let storedValue = localStorage.getItem(textareaName);
-//         if (storedValue) {
-//             inputTextarea.value = storedValue;
-//         }
-//     }
-// }
+function loadValueTextarea() {
+    if (typeof localStorage !== 'undefined') {
+        const textareaName = inputTextarea.name;
+        let storedValue = localStorage.getItem(textareaName);
+        if (storedValue) {
+            inputTextarea.value = storedValue;
+        }
+    }
+}
 
 
 
