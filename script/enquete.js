@@ -1,7 +1,4 @@
 const inputs = document.querySelectorAll("input[type='text'], input[type='email']");
-const voornaamInput = document.getElementById("voornaam");
-const achternaamInput = document.getElementById("achternaam");
-const studentennummerInput = document.getElementById("studentennummer");
 const inputRadios = document.querySelectorAll("input[type='radio']");
 const question_1 = document.getElementById("vraag1");
 const question_2 = document.getElementById("vraag2");
@@ -15,12 +12,8 @@ const question_6 = document.querySelector("#vraag6");
 
 
 loadInput();
-
-loadInput();
 loadRadioValue();
 loadValueTextarea();
-
-
 
 inputs.forEach(input => {
     input.addEventListener('input', saveInput);
@@ -40,33 +33,32 @@ if (question_1 && question_2) {
 }
 
 function saveInput() {
-  if (localStorage) {
-      inputs.forEach(input => {
-          const inputName = input.name;
-          const inputValue = input.value;
-          localStorage.setItem(inputName, inputValue);
-      });
-  }
+    if (localStorage) {
+        inputs.forEach(input => {
+            const inputName = input.name;
+            const inputValue = input.value;
+            localStorage.setItem(inputName, inputValue);
+        });
+    }
 }
 
 function loadInput() {
-  if (localStorage) {
-      inputs.forEach(input => {
-          const inputName = input.name;
-          let storedValue = localStorage.getItem(inputName);
-          if (storedValue) {
-              input.value = storedValue
-          }
-      });
-  }
+    if (localStorage) {
+        inputs.forEach(input => {
+            const inputName = input.name;
+            let storedValue = localStorage.getItem(inputName);
+            if (storedValue) {
+                input.value = storedValue
+            }
+        });
+    }
 }
-
 
 function saveValueOfSelect(input) {
     if (localStorage) {
         input.addEventListener('change', function () {
             const selectName = this.name;
-            const selectValue = this.value;
+            const selectValue = this.value
             localStorage.setItem(selectName, selectValue);
         });
     }
@@ -89,7 +81,7 @@ function saveRadioValue() {
             const radioName = radio.name;
             const radioValue = radio.value;
             if (radio.checked) {
-                localStorage.setItem(radioName, radioValue);
+                localStorage.setItem(radioName, radioValue)
             }
         });
     }
