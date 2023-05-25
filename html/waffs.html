@@ -49,19 +49,8 @@
             <legend>1. Wat voor cijfer geef je dit vak?</legend>
 
             <label for="vraag1">Hoe hoger het cijfer, hoe beter</label><br>
-            
-            <select name="waffs-cijfer" id="vraag1" required>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-            </select>
+
+            <input type="text" inputmode="numeric" name="waffs-cijfer" id="vraag1" >
 
         </fieldset>
         
@@ -72,12 +61,13 @@
             <legend>2. Wanneer heb je het vak Web app from scratch gevolgd?</legend>
         
             <label for="vraag2">Week 36 tot week 40 (1e semester) of week 6 tot week 10 (2e semester)</label><br>
-
-            <select name="waffs-semester" id="vraag2" required>
-                <option value="semester 1">1</option>
-                <option value="semester 2">2</option>
+                <ul>
+                    <li><label><input type="radio" name="waffs-semester" value="1" required><span>1</span></label></li>
+                    <li><label><input type="radio" name="waffs-semester" value="2"><span>2</span></label></li>
+                </ul>
             </select>
-
+            
+            <p id="vraag2"></p>
         </fieldset>
         
         <br>
