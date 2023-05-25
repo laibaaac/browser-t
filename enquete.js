@@ -32,7 +32,7 @@ if (question_1 && question_2) {
 }
 
 function saveInput() {
-    if (localStorage) {
+    if (typeof localStorage !== 'undefined') {
         inputs.forEach(input => {
             const inputName = input.name;
             const inputValue = input.value;
@@ -42,29 +42,31 @@ function saveInput() {
 }
 
 function loadInput() {
-    if (localStorage) {
+    if (typeof localStorage !== 'undefined') {
         inputs.forEach(input => {
             const inputName = input.name;
             let storedValue = localStorage.getItem(inputName);
             if (storedValue) {
-                input.value = storedValue
+                input.value = storedValue;
             }
         });
     }
 }
 
+
 function saveValueOfSelect(input) {
-    if (localStorage) {
+    if (typeof localStorage !== 'undefined') {
         input.addEventListener('change', function () {
             const selectName = this.name;
-            const selectValue = this.value
+            const selectValue = this.value;
             localStorage.setItem(selectName, selectValue);
         });
     }
 }
 
+
 function loadValueOfSelect(input) {
-    if (localStorage) {
+    if (typeof localStorage !== 'undefined') {
         const selectName = input.name;
         let storedSelectValue = localStorage.getItem(selectName);
 
@@ -75,19 +77,20 @@ function loadValueOfSelect(input) {
 }
 
 function saveRadioValue() {
-    if (localStorage) {
+    if (typeof localStorage !== 'undefined') {
         inputRadios.forEach(radio => {
             const radioName = radio.name;
             const radioValue = radio.value;
             if (radio.checked) {
-                localStorage.setItem(radioName, radioValue)
+                localStorage.setItem(radioName, radioValue);
             }
         });
     }
 }
 
+
 function loadRadioValue() {
-    if (localStorage) {
+    if (typeof localStorage !== 'undefined') {
         inputRadios.forEach(input => {
             const radioName = input.name;
             let storedValue = localStorage.getItem(radioName);
@@ -99,7 +102,7 @@ function loadRadioValue() {
 }
 
 function saveValueTextarea() {
-    if (localStorage) {
+    if (typeof localStorage !== 'undefined') {
         const textareaName = inputTextarea.name;
         const textareaValue = inputTextarea.value;
         localStorage.setItem(textareaName, textareaValue);
@@ -107,7 +110,7 @@ function saveValueTextarea() {
 }
 
 function loadValueTextarea() {
-    if (localStorage) {
+    if (typeof localStorage !== 'undefined') {
         const textareaName = inputTextarea.name;
         let storedValue = localStorage.getItem(textareaName);
         if (storedValue) {
@@ -115,6 +118,7 @@ function loadValueTextarea() {
         }
     }
 }
+
 
 
 inputRadios.forEach(button => {
