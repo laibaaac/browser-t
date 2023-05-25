@@ -1,12 +1,21 @@
 const inputs = document.querySelectorAll("input[type='text'], input[type='email']");
+const voornaamInput = document.getElementById("voornaam");
+const achternaamInput = document.getElementById("achternaam");
+const studentennummerInput = document.getElementById("studentennummer");
 const inputRadios = document.querySelectorAll("input[type='radio']");
 const question_1 = document.getElementById("vraag1");
 const question_2 = document.getElementById("vraag2");
 const inputTextarea = document.getElementById("vraag3");
 
+
 const question_4 = document.querySelector("#vraag4");
 const question_5 = document.querySelector("#vraag5");
 const question_6 = document.querySelector("#vraag6");
+
+
+
+loadInput();
+
 
 loadInput();
 loadRadioValue();
@@ -34,7 +43,12 @@ function saveInput() {
         inputs.forEach(input => {
             const inputName = input.name;
             const inputValue = input.value;
+
             localStorage.setItem(inputName, inputValue);
+            localStorage.setItem('voornaam', voornaamInput.value);
+            localStorage.setItem('achternaam', achternaamInput.value);
+            localStorage.setItem('studentennummer', studentennummerInput.value);
+
         });
     }
 }
@@ -44,8 +58,12 @@ function loadInput() {
         inputs.forEach(input => {
             const inputName = input.name;
             let storedValue = localStorage.getItem(inputName);
+
+            voornaamInput.value = localStorage.getItem('voornaam') || '';
+            achternaamInput.value = localStorage.getItem('achternaam') || '';
+            studentennummerInput.value = localStorage.getItem('studentennummer') || '';
             if (storedValue) {
-                input.value = storedValue
+                input.value = storedValue;
             }
         });
     }
@@ -55,7 +73,7 @@ function saveValueOfSelect(input) {
     if (localStorage) {
         input.addEventListener('change', function () {
             const selectName = this.name;
-            const selectValue = this.value
+            const selectValue = this.value;
             localStorage.setItem(selectName, selectValue);
         });
     }
@@ -78,7 +96,7 @@ function saveRadioValue() {
             const radioName = radio.name;
             const radioValue = radio.value;
             if (radio.checked) {
-                localStorage.setItem(radioName, radioValue)
+                localStorage.setItem(radioName, radioValue);
             }
         });
     }
@@ -114,6 +132,7 @@ function loadValueTextarea() {
     }
 }
 
+
 inputRadios.forEach(button => {
     button.addEventListener('change', () => {
         const radioName = button.name;
@@ -127,9 +146,10 @@ inputRadios.forEach(button => {
                 case "waffs-uitleg":
                     question_5.innerHTML = `Score: ${radioValue}`;
                     break;
-                case "wafs-inzicht":
+                case "waffs-inzicht":
                     question_6.innerHTML = `Score: ${radioValue}`;
                     break;
+                    // vanaf hier nog aanpassen, aan de code
                 case "cssttr-curriculum":
                     question_4.innerHTML = `Score: ${radioValue}`;
                     break;
@@ -199,3 +219,5 @@ inputRadios.forEach(button => {
         }
     });
 });
+
+
