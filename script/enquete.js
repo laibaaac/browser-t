@@ -149,16 +149,16 @@ inputRadios.forEach(button => {
 
 
 // loadInput();
-loadRadioValue();
-loadValueTextarea();
+// loadRadioValue();
+// loadValueTextarea();
 
 // inputs.forEach(input => {
 //     input.addEventListener('input', saveInput);
 // });
 
-inputRadios.forEach(radio => {
-    radio.addEventListener('change', saveRadioValue);
-});
+// inputRadios.forEach(radio => {
+//     radio.addEventListener('change', saveRadioValue);
+// });
 
 // inputTextarea.addEventListener('input', saveValueTextarea);
 
@@ -193,136 +193,46 @@ inputRadios.forEach(radio => {
 
 
 
-function saveRadioValue() {
-    if (typeof localStorage !== 'undefined') {
-        inputRadios.forEach(radio => {
-            const radioName = radio.name;
-            const radioValue = radio.value;
-            if (radio.checked) {
-                localStorage.setItem(radioName, radioValue);
-            }
-        });
-    }
-}
-
-
-function loadRadioValue() {
-    if (typeof localStorage !== 'undefined') {
-        inputRadios.forEach(input => {
-            const radioName = input.name;
-            let storedValue = localStorage.getItem(radioName);
-            if (storedValue && input.value === storedValue) {
-                input.checked = true;
-            }
-        });
-    }
-}
-
-function saveValueTextarea() {
-    if (typeof localStorage !== 'undefined') {
-        const textareaName = inputTextarea.name;
-        const textareaValue = inputTextarea.value;
-        localStorage.setItem(textareaName, textareaValue);
-    }
-}
-
-function loadValueTextarea() {
-    if (typeof localStorage !== 'undefined') {
-        const textareaName = inputTextarea.name;
-        let storedValue = localStorage.getItem(textareaName);
-        if (storedValue) {
-            inputTextarea.value = storedValue;
-        }
-    }
-}
-
-
-
-// inputRadios.forEach(button => {
-//     button.addEventListener('change', () => {
-//         const radioName = button.name;
-//         const radioValue = button.value;
-
-//         if (button.checked) {
-//             switch (radioName) {
-//                 case "waffs-lesstof":
-//                     question_4.innerHTML = `Score: ${radioValue}`;
-//                     break;
-//                 case "waffs-uitleg":
-//                     question_5.innerHTML = `Score: ${radioValue}`;
-//                     break;
-//                 case "waffs-inzicht":
-//                     question_6.innerHTML = `Score: ${radioValue}`;
-//                     break;
-//                     // vanaf hier nog aanpassen, aan de code
-//                 case "cssttr-curriculum":
-//                     question_4.innerHTML = `Score: ${radioValue}`;
-//                     break;
-//                 case "cssttr-curriculum-explanation":
-//                     question_5.innerHTML = `Score: ${radioValue}`;
-//                     break;
-//                 case "cssttr-insight":
-//                     question_6.innerHTML = `Score: ${radioValue}`;
-//                     break;
-//                 case "bt-curriculum":
-//                     question_4.innerHTML = `Score: ${radioValue}`;
-//                     break;
-//                 case "bt-curriculum-explanation":
-//                     question_5.innerHTML = `Score: ${radioValue}`;
-//                     break;
-//                 case "bt-insight":
-//                     question_6.innerHTML = `Score: ${radioValue}`;
-//                     break;
-//                 case "pwa-curriculum":
-//                     question_4.innerHTML = `Score: ${radioValue}`;
-//                     break;
-//                 case "pwa-curriculum-explanation":
-//                     question_5.innerHTML = `Score: ${radioValue}`;
-//                     break;
-//                 case "pwa-insight":
-//                     question_6.innerHTML = `Score: ${radioValue}`;
-//                     break;
-//                 case "rtw-curriculum":
-//                     question_4.innerHTML = `Score: ${radioValue}`;
-//                     break;
-//                 case "rtw-curriculum-explanation":
-//                     question_5.innerHTML = `Score: ${radioValue}`;
-//                     break;
-//                 case "rtw-insight":
-//                     question_6.innerHTML = `Score: ${radioValue}`;
-//                     break;
-//                 case "hcd-curriculum":
-//                     question_4.innerHTML = `Score: ${radioValue}`;
-//                     break;
-//                 case "hcd-curriculum-explanation":
-//                     question_5.innerHTML = `Score: ${radioValue}`;
-//                     break;
-//                 case "hcd-insight":
-//                     question_6.innerHTML = `Score: ${radioValue}`;
-//                     break;
-//                 case "mp-curriculum":
-//                     question_4.innerHTML = `Score: ${radioValue}`;
-//                     break;
-//                 case "mp-curriculum-explanation":
-//                     question_5.innerHTML = `Score: ${radioValue}`;
-//                     break;
-//                 case "mp-insight":
-//                     question_6.innerHTML = `Score: ${radioValue}`;
-//                     break;
-//                 case "wn-curriculum":
-//                     question_4.innerHTML = `Score: ${radioValue}`;
-//                     break;
-//                 case "wn-curriculum-explanation":
-//                     question_5.innerHTML = `Score: ${radioValue}`;
-//                     break;
-//                 case "wn-insight":
-//                     question_6.innerHTML = `Score: ${radioValue}`;
-//                     break;
-//                 default:
-//                     break;
+// function saveRadioValue() {
+//     if (typeof localStorage !== 'undefined') {
+//         inputRadios.forEach(radio => {
+//             const radioName = radio.name;
+//             const radioValue = radio.value;
+//             if (radio.checked) {
+//                 localStorage.setItem(radioName, radioValue);
 //             }
-//         }
-//     });
-// });
+//         });
+//     }
+// }
 
+
+// function loadRadioValue() {
+//     if (typeof localStorage !== 'undefined') {
+//         inputRadios.forEach(input => {
+//             const radioName = input.name;
+//             let storedValue = localStorage.getItem(radioName);
+//             if (storedValue && input.value === storedValue) {
+//                 input.checked = true;
+//             }
+//         });
+//     }
+// }
+
+// function saveValueTextarea() {
+//     if (typeof localStorage !== 'undefined') {
+//         const textareaName = inputTextarea.name;
+//         const textareaValue = inputTextarea.value;
+//         localStorage.setItem(textareaName, textareaValue);
+//     }
+// }
+
+// function loadValueTextarea() {
+//     if (typeof localStorage !== 'undefined') {
+//         const textareaName = inputTextarea.name;
+//         let storedValue = localStorage.getItem(textareaName);
+//         if (storedValue) {
+//             inputTextarea.value = storedValue;
+//         }
+//     }
+// }
 
