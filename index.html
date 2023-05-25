@@ -5,18 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enquete Browser Technologies</title> 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+
+    <!-- font import -->
+    <link rel="stylesheet" href="https://use.typekit.net/edf1wmn.css">
+
+    <!-- dark & light mode -->
     <meta name="color-scheme" content="light dark">
-    <link rel="stylesheet" href="css/styling.css">
+
+    <link rel="stylesheet" href="/css/styling.css">
+
+    <script src="/script/enquete.js" defer></script>
    
 </head>
 <body>
-    <!-- moet even kijken hoe het met de class current page, de progress kan laten zien, 
-    De bedoeling is dat ik de class per pagina erop zet, zo kan ik de progress laten zien. 
-    Ik moet nog dit allemaal stylen-->
 
+<header>
+    <!-- door middel van de current page class, ziet de gebruiker waar ze op dit moment zijn -->
     <nav>
         <ol>
             <li><a class="current-page" href="/index.html">Info</a></li>
@@ -30,8 +34,8 @@
             <li><a href="/html/wnerd.html">Vak 8</a></li>
         </ol>
     </nav>
-
 </header>
+
 <main>
     <h1>Enquete voor de minor Web Development</h1>
 
@@ -40,7 +44,8 @@
 
             <legend>Studentengegevens</legend>
 
-            <!-- to be required or not be required that is the question  -->
+            <!-- besloten om niet required te maken, 
+                zodat de studenten zich beter kunnen uiten (zie readme) -->
             <label for="voornaam">Voornaam
                 <input type="text" 
                     name="voornaam" 
@@ -62,21 +67,22 @@
             <br>
 
             <label for="studentennummer">Studentennummer
-
                 <input type="text" 
-                    inputmode="numeric" 
                     name="studentennummer" 
                     id="studentennummer" 
                     placeholder="De nummer bestaat uit 9 cijfers"
                     aria-placeholder="De nummer bestaat uit 9 cijfers" 
                     minlength="1" 
                     maxlength="9"  
-                    pattern="[5-6][0-9]{8}">
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                    <!-- een beetje vies gespeeld, maar ik gebruik een stukje javascript hier,
+                     om alleen cijfers erin te laten -->
             </label>
+
+            
+            
             
             <br>
-
-
 
             <label for="email">Email
 
@@ -91,7 +97,9 @@
 
             <button class="volgende" type="submit" value="button">Volgende</button>
 
+    </form>
+
     
-<!-- <script src="script/enquete.js"></script> -->
+
 </body>
 </html>

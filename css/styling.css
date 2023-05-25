@@ -1,3 +1,4 @@
+@import url("https://use.typekit.net/edf1wmn.css");
 
 
 /* :root {
@@ -12,6 +13,11 @@
 
 @media (prefers-color-scheme: dark ) {
     :root {
+    -font-family: "interstate", sans-serif;
+    --font-size-paragraaf: 1em;
+    --font-size-kopje: 2em;
+
+
         --background-color: gray;
         --fieldset-color:black;
         --button-color:black;
@@ -68,6 +74,7 @@ nav ol li a {
 
 .current-page {
     opacity: 80%;
+    background-color: purple;
 }
 
 nav ol li:has(:not(.current):hover) {

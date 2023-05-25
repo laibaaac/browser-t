@@ -1,93 +1,201 @@
-// Hier wordt er bepaalde elementen vanuit mijn formulier in de local storage toegevoegd,
-// ik kan nog even bekijken hoe dit precies gaat werken, even naar tutorials bekijken
-// vergeet niet eigen variabele te zetten, om de local storage te laten werken!!!!!!!!!!!!
+const inputs = document.querySelectorAll("input[type='text'], input[type='email']");
+const inputRadios = document.querySelectorAll("input[type='radio']");
+const question_1 = document.getElementById("vraag1");
+const question_2 = document.getElementById("vraag2");
+const inputTextarea = document.getElementById("vraag3");
 
-if (typeof(Storage) !== "undefined") {
-  
-    // Get references to the input fields for personal information
-    var inputFirstName = document.getElementById("firstName");
-    var inputLastName = document.getElementById("lastName");
-    var inputStudentNumber = document.getElementById("studentNumber");
-    var inputEmail = document.getElementById("email");
-    
-    // Set up event listeners for the input fields for personal information
-    if (inputFirstName) {
-      // When the user types into the first name input field, store the value in local storage
-      inputFirstName.oninput = function (e) {
-        localStorage.setItem("firstName", inputFirstName.value);
-      }
-      // Set the value of the first name input field to the stored value, if there is one
-      inputFirstName.value = localStorage.getItem("firstName");
+const question_4 = document.querySelector("#vraag4");
+const question_5 = document.querySelector("#vraag5");
+const question_6 = document.querySelector("#vraag6");
+
+loadInput();
+loadRadioValue();
+loadValueTextarea();
+
+inputs.forEach(input => {
+    input.addEventListener('input', saveInput);
+});
+
+inputRadios.forEach(radio => {
+    radio.addEventListener('change', saveRadioValue);
+});
+
+inputTextarea.addEventListener('input', saveValueTextarea);
+
+if (question_1 && question_2) {
+    loadValueOfSelect(question_1);
+    loadValueOfSelect(question_2);
+    saveValueOfSelect(question_1);
+    saveValueOfSelect(question_2);
+}
+
+function saveInput() {
+    if (localStorage) {
+        inputs.forEach(input => {
+            const inputName = input.name;
+            const inputValue = input.value;
+            localStorage.setItem(inputName, inputValue);
+        });
     }
-    
-    if (inputLastName) {
-      // When the user types into the last name input field, store the value in local storage
-      inputLastName.oninput = function (e) {
-        localStorage.setItem("lastName", inputLastName.value);
-      }
-      // Set the value of the last name input field to the stored value, if there is one
-      inputLastName.value = localStorage.getItem("lastName");
+}
+
+function loadInput() {
+    if (localStorage) {
+        inputs.forEach(input => {
+            const inputName = input.name;
+            let storedValue = localStorage.getItem(inputName);
+            if (storedValue) {
+                input.value = storedValue
+            }
+        });
     }
-    
-    if (inputStudentNumber) {
-      // When the user types into the student number input field, store the value in local storage
-      inputStudentNumber.oninput = function (e) {
-        localStorage.setItem("studentNumber", inputStudentNumber.value);
-      }
-      // Set the value of the student number input field to the stored value, if there is one
-      inputStudentNumber.value = localStorage.getItem("studentNumber");
+}
+
+function saveValueOfSelect(input) {
+    if (localStorage) {
+        input.addEventListener('change', function () {
+            const selectName = this.name;
+            const selectValue = this.value
+            localStorage.setItem(selectName, selectValue);
+        });
     }
-    
-    if (inputEmail) {
-      // When the user types into the email input field, store the value in local storage
-      inputEmail.oninput = function (e) {
-        localStorage.setItem("email", inputEmail.value);
-      }
-      // Set the value of the email input field to the stored value, if there is one
-      inputEmail.value = localStorage.getItem("email");
-    }
-  
-    // VAK 1
-    // Select all fieldset elements with class "radio"
-    let fieldsets = document.querySelectorAll('fieldset.radio');
-    // Iterate over each fieldset element
-    for (let i = 0; i < fieldsets.length; i++) {
-      // Select all input elements within the current fieldset
-      let inputs = fieldsets[i].querySelectorAll('input[type="radio"]');
-  
-      // Iterate over each input element
-      for (let j = 0; j < inputs.length; j++) {
-        // Store the current input element in inputElement     
-        let inputElement = inputs[j];
-  
-        // Get the stored value for this input element's name attribute
-        let storedValue = localStorage.getItem(inputElement.name);
-  
-        // Check if a stored value exists for this input element's name attribute
-        if (storedValue !== null) {
-  
-          // If the input element radio button,
-          // set its checked property to true if its value attribute matches the stored value
-          if (inputElement.type === "radio") {
-            inputElement.checked = (inputElement.value === storedValue);
-          }
-          // If the input element is not a checkbox or radio button,
-          // set its value property to the stored value
-          else {
-            inputElement.value = storedValue;
-          }
+}
+
+function loadValueOfSelect(input) {
+    if (localStorage) {
+        const selectName = input.name;
+        let storedSelectValue = localStorage.getItem(selectName);
+
+        if (storedSelectValue) {
+            input.value = storedSelectValue;
         }
-        // Set up an oninput event handler for the input element
-        inputElement.oninput = function (e) {
-          // Save the input element's current value to localStorage
-          localStorage.setItem(inputElement.name, inputElement.value);
-        };
-  
-        // Log the current value of the input element to the console
-        console.log(inputElement.value);
-      }
     }
-  } else {
-    // Display a message to the user that their browser does not support the necessary features
-    alert("Your browser does not support the features required by this website. Please try using a different browser or updating your current browser to a newer version.");
-  }
+}
+
+function saveRadioValue() {
+    if (localStorage) {
+        inputRadios.forEach(radio => {
+            const radioName = radio.name;
+            const radioValue = radio.value;
+            if (radio.checked) {
+                localStorage.setItem(radioName, radioValue)
+            }
+        });
+    }
+}
+
+function loadRadioValue() {
+    if (localStorage) {
+        inputRadios.forEach(input => {
+            const radioName = input.name;
+            let storedValue = localStorage.getItem(radioName);
+            if (storedValue && input.value === storedValue) {
+                input.checked = true;
+            }
+        });
+    }
+}
+
+function saveValueTextarea() {
+    if (localStorage) {
+        const textareaName = inputTextarea.name;
+        const textareaValue = inputTextarea.value;
+        localStorage.setItem(textareaName, textareaValue);
+    }
+}
+
+function loadValueTextarea() {
+    if (localStorage) {
+        const textareaName = inputTextarea.name;
+        let storedValue = localStorage.getItem(textareaName);
+        if (storedValue) {
+            inputTextarea.value = storedValue;
+        }
+    }
+}
+
+inputRadios.forEach(button => {
+    button.addEventListener('change', () => {
+        const radioName = button.name;
+        const radioValue = button.value;
+
+        if (button.checked) {
+            switch (radioName) {
+                case "waffs-lesstof":
+                    question_4.innerHTML = `Score: ${radioValue}`;
+                    break;
+                case "waffs-uitleg":
+                    question_5.innerHTML = `Score: ${radioValue}`;
+                    break;
+                case "wafs-inzicht":
+                    question_6.innerHTML = `Score: ${radioValue}`;
+                    break;
+                case "cssttr-curriculum":
+                    question_4.innerHTML = `Score: ${radioValue}`;
+                    break;
+                case "cssttr-curriculum-explanation":
+                    question_5.innerHTML = `Score: ${radioValue}`;
+                    break;
+                case "cssttr-insight":
+                    question_6.innerHTML = `Score: ${radioValue}`;
+                    break;
+                case "bt-curriculum":
+                    question_4.innerHTML = `Score: ${radioValue}`;
+                    break;
+                case "bt-curriculum-explanation":
+                    question_5.innerHTML = `Score: ${radioValue}`;
+                    break;
+                case "bt-insight":
+                    question_6.innerHTML = `Score: ${radioValue}`;
+                    break;
+                case "pwa-curriculum":
+                    question_4.innerHTML = `Score: ${radioValue}`;
+                    break;
+                case "pwa-curriculum-explanation":
+                    question_5.innerHTML = `Score: ${radioValue}`;
+                    break;
+                case "pwa-insight":
+                    question_6.innerHTML = `Score: ${radioValue}`;
+                    break;
+                case "rtw-curriculum":
+                    question_4.innerHTML = `Score: ${radioValue}`;
+                    break;
+                case "rtw-curriculum-explanation":
+                    question_5.innerHTML = `Score: ${radioValue}`;
+                    break;
+                case "rtw-insight":
+                    question_6.innerHTML = `Score: ${radioValue}`;
+                    break;
+                case "hcd-curriculum":
+                    question_4.innerHTML = `Score: ${radioValue}`;
+                    break;
+                case "hcd-curriculum-explanation":
+                    question_5.innerHTML = `Score: ${radioValue}`;
+                    break;
+                case "hcd-insight":
+                    question_6.innerHTML = `Score: ${radioValue}`;
+                    break;
+                case "mp-curriculum":
+                    question_4.innerHTML = `Score: ${radioValue}`;
+                    break;
+                case "mp-curriculum-explanation":
+                    question_5.innerHTML = `Score: ${radioValue}`;
+                    break;
+                case "mp-insight":
+                    question_6.innerHTML = `Score: ${radioValue}`;
+                    break;
+                case "wn-curriculum":
+                    question_4.innerHTML = `Score: ${radioValue}`;
+                    break;
+                case "wn-curriculum-explanation":
+                    question_5.innerHTML = `Score: ${radioValue}`;
+                    break;
+                case "wn-insight":
+                    question_6.innerHTML = `Score: ${radioValue}`;
+                    break;
+                default:
+                    break;
+            }
+        }
+    });
+});
