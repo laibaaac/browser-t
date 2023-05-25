@@ -1,4 +1,7 @@
 const inputs = document.querySelectorAll("input[type='text'], input[type='email']");
+// const voornaamInput = document.getElementById("voornaam");
+// const achternaamInput = document.getElementById("achternaam");
+// const studentennummerInput = document.getElementById("studentennummer");
 const inputRadios = document.querySelectorAll("input[type='radio']");
 const question_1 = document.getElementById("vraag1");
 const question_2 = document.getElementById("vraag2");
