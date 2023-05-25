@@ -13,7 +13,6 @@ const question_5 = document.querySelector("#vraag5");
 const question_6 = document.querySelector("#vraag6");
 
 
-
 loadInput();
 loadRadioValue();
 loadValueTextarea();
