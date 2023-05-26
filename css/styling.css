@@ -1,82 +1,400 @@
 @import url("https://use.typekit.net/edf1wmn.css");
 
-
-/* :root {
-    --background-color: lightgray;
-    --fieldset-color:white;
-    --button-color:white;
-    --button-text:black;
-    --nav-color:black;
-    --nav-text:white;
-    --drop-shadow:violet;
+:root {
+  --background-color: lightgray;
+  --fieldset-color: white;
+  --button-color: white;
+  --button-text: black;
+  --nav-color: black;
+  --nav-text: white;
+  --drop-shadow: hotpink;
+  --valid-form-data-kleur: mediumseagreen;
+  --invalid-form-data-kleur: red;
+  --input-kleur: #f6f6f6;
+  --label-kleur: #261e29;
 }
 
-@media (prefers-color-scheme: dark ) {
-    :root {
-    -font-family: "interstate", sans-serif;
-    --font-size-paragraaf: 1em;
-    --font-size-kopje: 2em;
-
-
-        --background-color: gray;
-        --fieldset-color:black;
-        --button-color:black;
-        --button-text:white;
-        --nav-color:white;
-        --nav-text:black;
-        --drop-shadow:black;
-    }
-} */
-
-
-body{
-    font-family: 'Roboto', sans-serif;
-
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: gray;
+    --fieldset-color: black;
+    --button-color: black;
+    --button-text: white;
+    --nav-color: white;
+    --nav-text: black;
+    --drop-shadow: #D5076E;
+  }
 }
 
-h1{
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "interstate", sans-serif;
+    background-color: var(--background-color);
+}
+
+form {
+    background-color: var(--fieldset-color);
+    padding: 1em;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 50vw;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form>fieldset {
+    gap: 3em;
+    margin: 2em .5em;
+    padding: 1em;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"] {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+h1 {
     font-weight: bold;
     font-size: 1.5em;
+    text-align: center;
 }
 
-legend{
-    font-weight: bold;
-    font-size: 1.2em;
+h2 {
+  font-weight: bold;
+  font-size: 1.2em;
+  text-align: center;
 }
 
+legend {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+p:last-of-type {
+  text-align: center;
+}
 
 fieldset {
-    border: transparent;
+  border: transparent;
+  padding: 1em;
+  border-radius: 1em;
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
 }
 
+main {
+  width: 100%;
+}
+
+li {
+  list-style: none;
+}
 
 nav ol {
-    display: flex;
-    list-style: none;
-    gap: 1em;
-    padding: 0;
+  display: flex;
+  list-style: none;
+  gap: 1em;
+  padding: 0;
 }
 
 nav ol li {
-    flex-grow: 1;
-    font-size: 1em;
-    background-color: pink;
-    border-radius: 1em;
-    display: grid;
-    place-content: center;
-    padding: .5em 0 .5em 0;
+  font-size: 1em;
+  background-color: var(--nav-color);
+  border-radius: 1em;
+  display: grid;
+  place-content: center;
+  padding: 1.5em;
 }
 
 nav ol li a {
-    color: black;
-    text-decoration: none;
+  color: var(--nav-text);
+  text-decoration: none;
 }
 
-.current-page {
-    opacity: 80%;
-    background-color: purple;
+nav ol li a.current-page {
+  color: var(--drop-shadow);
+  text-decoration: none;
+  font-weight: bold;
 }
 
 nav ol li:has(:not(.current):hover) {
-    filter: drop-shadow(0 0 1em black);
+  filter: drop-shadow(0 0 2em hotpink);
 }
+
+@media screen and (max-width: 600px) {
+  nav {
+    display: none;
+  }
+
+    form {
+      width: 90vw;
+    }
+    
+    fieldset {
+      width: 90vw;
+    }
+    
+    textarea {
+      width: 90%;
+    }
+    
+    input[type="text"],
+    input[type="email"] {
+      width: 90%;
+    }
+    
+  }
+
+
+  
+
+br {
+  display: none;
+}
+
+#studentgegevens label input:valid {
+  border: 1px solid var(--valid-form-data-kleur);
+  border-bottom: 4px solid var(--valid-form-data-kleur);
+}
+
+#studentgegevens label input:invalid {
+  border: 1px solid var(--invalid-form-data-kleur);
+  border-bottom: 4px solid var(--invalid-form-data-kleur);
+}
+
+#studentgegevens label input:placeholder-shown {
+  border: 1px solid var(--invalid-form-data-kleur);
+  border-bottom: 4px solid var(--invalid-form-data-kleur);
+}
+
+#studentgegevens label input[type="text"]:valid::after {
+  content: 'Goed bezig!';
+  position: absolute;
+  transform: translateY(-2.3em);
+  right: 3em;
+  font-weight: bold;
+  color: var(--valid-form-data-kleur);
+}
+
+#vak fieldset ul {
+  display: flex;
+  background-color: var(--background-color);
+  height: 100%;
+  width: max-content;
+}
+
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: inline-block;
+  vertical-align: middle;
+  opacity: 0;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+input:checked+span {
+  display: inline-block;
+  background-color: var(--drop-shadow);
+  width: 2em;
+  height: 2em;
+}
+
+label {
+  display: inline-block;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    gap: 2em;
+  }
+  
+  .volgende,
+  .vorige {
+    display: flex;
+    background-color: var(--drop-shadow);
+    color: var(--button-text);
+    border: none;
+    border-radius: 1em;
+    padding: 1em;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .vorige {
+    font-weight: bolder; /* Remove bold style */
+  }
+  
+
+.volgende:hover,
+.vorige:hover {
+  box-shadow: 0 0 1em var(--drop-shadow);
+}
+
+@media screen and (max-width: 50em) {
+  fieldset {
+    width: 80vw;
+  }
+}
+
+@media print {
+  ::-webkit-input-placeholder {
+    color: transparent !important;
+  }
+  ::-moz-placeholder {
+    color: transparent !important;
+  }
+  :-ms-input-placeholder {
+    color: transparent !important;
+  }
+  :-moz-placeholder {
+    color: transparent !important;
+  }
+}
+
+    @media screen and (max-width: 50em) {
+        fieldset {
+            width: 80vw;
+        }
+      }
+
+
+      @media screen and (max-width: 44em) {
+        #studentgegevens, #vak {
+            width: 70vw;
+        }
+      }
+
+
+      #vak label,
+      legend,
+      h3 {
+        display: block;
+        text-align: left;
+        margin-bottom: 5px;
+      }
+      
+      #vak ul {
+        padding-left: 0;
+        list-style: none;
+      }
+      
+      #vak li {
+        display: block;
+        margin-bottom: 5px;
+      }
+      
+      #vak input[type="radio"],
+      #vak input[type="checkbox"] {
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+      
+      textarea {
+        width: 100%;
+        
+        padding: 1em;
+       width: 20vw;
+        
+    }
+
+    #vak fieldset {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2em;
+        margin-bottom: 10px; 
+      }
+      
+      #vak fieldset:first-child {
+        margin-top: 0;
+      }
+      
+      #vak fieldset:last-child {
+        margin-bottom: 0;
+      }
+      
+
+      #vak fieldset:first-of-type input[type="text"] {
+        width: 3em; /* Set the desired width */
+        height: 3em; /* Set the desired height */
+        font-size: 1em;
+      }
+      
+      
+      #vak fieldset h3 {
+        margin-top: 0; /* Remove top margin of h3 elements within fieldsets */
+        font-size: 1em, bold;
+        
+      }
+      
+      #vak fieldset label {
+        margin-bottom: 5px; /* Adjust the bottom margin of labels within fieldsets */
+      }
+      
+      #vak fieldset ul {
+        margin-top: 5px; /* Adjust the top margin of ul elements within fieldsets */
+        margin-bottom: 10px; /* Adjust the bottom margin of ul elements within fieldsets */
+      }
+      
+      #vak fieldset ul li {
+        margin-bottom: 5px; /* Adjust the bottom margin of li elements within fieldsets */
+      }
+      
+      #vak fieldset p {
+        margin-top: 0; /* Remove top margin of p elements within fieldsets */
+        margin-bottom: 10px; /* Adjust the bottom margin of p elements within fieldsets */
+      }
+      
+
+      @media screen and (max-width: 600px) {
+        #vak fieldset {
+          display: block;
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      
+        #vak fieldset label {
+          display: block;
+          margin-bottom: 5px;
+        }
+      
+        #vak fieldset input[type="radio"] {
+          display: block;
+          margin: 0 auto;
+        }
+        #vak fieldset textarea {
+            width: 100%;
+          }
+        
+          #vak fieldset textarea[name="message"] {
+            float: left;
+            width: 100%;
+          }
+        }
+      
+      
+      

@@ -14,9 +14,6 @@
     <link rel="stylesheet" href="../css/styling.css">
 
     <script src="../script/enquete.js" defer></script>
-
-
-
    
 
 </head>
@@ -26,7 +23,7 @@
     <header>
     <nav>
             <ol>
-                <li><a href="../index.html">Info</a></li>
+                <li><a class="current-page" href="../index.html">Info</a></li>
                 <li><a class="current-page" href="./waffs.html">Vak 1</a></li>
                 <li><a href="./cttr.html">Vak 2</a></li>
                 <li><a href="./pwa.html">Vak 3</a></li>
@@ -40,30 +37,41 @@
     </nav>
     </header>
     
+<main> 
+
 
     <h1>Web app from scratch</h1>
-    <h2>Docenten: Robert Spier & Joost Faber</h2>
+            <h2>Docenten: Robert Spier & Joost Faber</h2>
 
-    <form action="./cttr.html">
+    <form action="./cttr.html" id="vak">
+      
 
         <!-- 1e vraag cijfer -->
         <fieldset>
+            
+            <h3>1. Wat voor cijfer geef je dit vak? </h3>
+         
+            <label for="vraag1">Hoe hoger het cijfer, hoe beter</label>
 
-            <legend>1. Wat voor cijfer geef je dit vak?</legend>
-
-            <label for="vraag1">Hoe hoger het cijfer, hoe beter</label><br>
-
-            <input type="text" inputmode="numeric" name="waffs-cijfer" id="vraag1" >
+            <input type="text" 
+                    name="waffs-cijfer" 
+                    id="vraag1" 
+                    minlength="1" 
+                    maxlength="1"  
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '')">
 
         </fieldset>
         
 
           <!-- 2e vraag tijdvak -->
         <fieldset>
-
-            <legend>2. Wanneer heb je het vak Web app from scratch gevolgd?</legend>
+           
+            <h3>
+                2. Wanneer heb je het vak Web app from scratch gevolgd?
+            </h3>
+            
         
-            <label for="vraag2">Week 36 tot week 40 (1e semester) of week 6 tot week 10 (2e semester)</label><br>
+            <label for="vraag2">Week 36 tot week 40 (1e semester) of week 6 tot week 10 (2e semester)</label>
                 <ul>
                     <li><label><input type="radio" name="waffs-semester" value="1" required><span>1</span></label></li>
                     <li><label><input type="radio" name="waffs-semester" value="2"><span>2</span></label></li>
@@ -73,17 +81,18 @@
             <p id="vraag2"></p>
         </fieldset>
         
-        <br>
+
 
              <!-- 3e mening over vak -->
         
         <fieldset>
-            <label for="vraag3">3. Hoe vond je het gaan tijdens dit vak? </label><br>
+            <h3>3. Hoe vond je het gaan tijdens dit vak? </h3>
+            <!-- <label for="vraag3">3. Hoe vond je het gaan tijdens dit vak? </label> -->
             <textarea name="waffs-mening" class="mening" id="vraag3" cols="80" rows="5"
                 placeholder="Geef ons feedback..." value=""></textarea>
         </fieldset>
         
-        <br>
+     
         
              <!-- beoordelingen met cijfer -->
         <fieldset>
@@ -92,8 +101,8 @@
             <!-- beeordeling over lesstof-->
             <h3>Lesstof van Web app from scratch</h3>
 
-            <label for="vraag4">4. Hoe moeilijk vond je de lesstof? <br>
-            Hoe hoger het cijfer, hoe moeilijker het vak was</label><br>
+            <label for="vraag4">4. Hoe moeilijk vond je de lesstof? 
+            Hoe hoger het cijfer, hoe moeilijker het vak was</label>
 
             <ul>
                 <li><label><input type="radio" name="waffs-lesstof" value="1" required><span>1</span></label></li>
@@ -115,8 +124,8 @@
 
             <h3>Uitleg van Web app from scratch</h3>
 
-            <label for="vraag5"> 5. Wat vond je van de uitleg?  <br>
-            Hoe hoger het cijfer, hoe moeilijker.</label><br>
+            <label for="vraag5"> 5. Wat vond je van de uitleg?  
+            Hoe hoger het cijfer, hoe moeilijker.</label>
 
             <ul>
                 <li><label><input type="radio" name="waffs-uitleg" value="1" required><span>1</span></label></li>
@@ -138,8 +147,8 @@
 
             <h3>Eigen inzicht op Web app from scratch</h3>
 
-            <label for="vraag6"> Hoe goed begreep je de lesstof? <br>
-                Hoe hoger het getal, hoe beter je het begreep.</label><br>
+            <label for="vraag6"> Hoe goed begreep je de lesstof? 
+                Hoe hoger het getal, hoe beter je het begreep.</label>
 
                 <ul>
                     <li><label><input type="radio" name="waffs-inzicht" value="1" required><span>1</span></label></li>
@@ -159,7 +168,7 @@
 
 
         <!-- buttons vorige en volgende-->
-            <ul>
+            <ul class="buttons">
                 <li><a class="vorige" href="../index.html" rel="prev">Vorige</a></li>
                 <li><button class="Volgende" type="submit">Volgende</button></li>
             </ul>
@@ -171,6 +180,7 @@
     <p>2/8</p>
 
 
+</main>
 
  
     

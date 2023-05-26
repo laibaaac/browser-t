@@ -141,98 +141,17 @@ inputRadios.forEach(button => {
         case "waffs-inzicht":
           question_6.innerHTML = `Gegeven cijfer: ${radioValue}`;
           break;
+          case "waffs-lesstof":
+          question_4.innerHTML = `Gegeven cijfer: ${radioValue}`;
+          break;
+        case "waffs-uitleg":
+          question_5.innerHTML = `Gegeven cijfer: ${radioValue}`;
+          break;
+        case "waffs-inzicht":
+          question_6.innerHTML = `Gegeven cijfer: ${radioValue}`;
+          break;
         // Andere vakken radiobutton erbij zetten
       }
     }
   });
 });
-
-
-// loadInput();
-// loadRadioValue();
-// loadValueTextarea();
-
-// inputs.forEach(input => {
-//     input.addEventListener('input', saveInput);
-// });
-
-// inputRadios.forEach(radio => {
-//     radio.addEventListener('change', saveRadioValue);
-// });
-
-// inputTextarea.addEventListener('input', saveValueTextarea);
-
-// if (question_1 && question_2) {
-//     loadValueOfSelect(question_1);
-//     loadValueOfSelect(question_2);
-//     saveValueOfSelect(question_1);
-//     saveValueOfSelect(question_2);
-// }
-
-// function saveInput() {
-//     if (typeof localStorage !== 'undefined') {
-//         inputs.forEach(input => {
-//             const inputName = input.name;
-//             const inputValue = input.value;
-//             localStorage.setItem(inputName, inputValue);
-//         });
-//     }
-// }
-
-// function loadInput() {
-//     if (typeof localStorage !== 'undefined') {
-//         inputs.forEach(input => {
-//             const inputName = input.name;
-//             let storedValue = localStorage.getItem(inputName);
-//             if (storedValue) {
-//                 input.value = storedValue;
-//             }
-//         });
-//     }
-// }
-
-
-
-// function saveRadioValue() {
-//     if (typeof localStorage !== 'undefined') {
-//         inputRadios.forEach(radio => {
-//             const radioName = radio.name;
-//             const radioValue = radio.value;
-//             if (radio.checked) {
-//                 localStorage.setItem(radioName, radioValue);
-//             }
-//         });
-//     }
-// }
-
-
-// function loadRadioValue() {
-//     if (typeof localStorage !== 'undefined') {
-//         inputRadios.forEach(input => {
-//             const radioName = input.name;
-//             let storedValue = localStorage.getItem(radioName);
-//             if (storedValue && input.value === storedValue) {
-//                 input.checked = true;
-//             }
-//         });
-//     }
-// }
-
-// function saveValueTextarea() {
-//     if (typeof localStorage !== 'undefined') {
-//         const textareaName = inputTextarea.name;
-//         const textareaValue = inputTextarea.value;
-//         localStorage.setItem(textareaName, textareaValue);
-//     }
-// }
-
-// function loadValueTextarea() {
-//     if (typeof localStorage !== 'undefined') {
-//         const textareaName = inputTextarea.name;
-//         let storedValue = localStorage.getItem(textareaName);
-//         if (storedValue) {
-//             inputTextarea.value = storedValue;
-//         }
-//     }
-// }
-
