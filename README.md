@@ -1,5 +1,5 @@
 # Browser Technologies - Enquête voor de minor web
-Placeholder 
+<img width="500" alt="Schermafbeelding 2023-05-26 om 08 22 53" src="https://github.com/laibaaac/browser-t/assets/94360732/5ec7f5ee-e907-4782-8b14-4cfd35ab64c4">
 
 Voor het vak Browser technologie, moesten wij een toegankelijk website maken (echt op alle aspecten proberen te letten).
 Zo moeten we onze website op verschillende browsers testen, rekening houden met verschillende formaten schermen, ook op kleurcontrast etc letten. 
@@ -397,9 +397,14 @@ input[type="radio"] {
 ### 6. Dark / light mode
 Nog een criteria was dat het formulier een light/ dark mode moet hebben, dit houdt in dat de kleuren/ contrast veranderd naarmate hoe donker het wordt (dag naar nacht). Ik heb hier ook het principe van progressive enhancement proberen toe te voegen. Ik heb zowel in mijn html  `<meta name="color-scheme" content="light dark">` als css (zie hieronder) de dark/ light mode toegepast. Als mijn css uit staat dan heb ik tenminste de fallback vanuit de html. 
  
- img light 
+ Light mode:
+ 
+<img width="500" alt="Schermafbeelding 2023-05-26 om 11 25 47" src="https://github.com/laibaaac/browser-t/assets/94360732/42c94de5-b623-41a7-a691-7303e58a3b1b">
 
- img dark
+Dark mode:
+
+<img width="500" alt="Schermafbeelding 2023-05-26 om 11 26 03" src="https://github.com/laibaaac/browser-t/assets/94360732/c6cb813f-e94d-490e-b92f-e0645d54210a">
+
 
 
 ```
@@ -445,8 +450,9 @@ Verschillende soorten progressive enhancement features die ik bij mijn prototype
 Zoals ik eerder zei, we hoeven voor dit vak geen back-end kant koppelen, wel is aan ons de opdracht gegeven om na te denken hoe de server side eruit zou zien. 
 Ik heb hieronder uitgelegd hoe het erui zou kunnen zien. 
 
+<img width="500" alt="Schermafbeelding 2023-05-26 om 11 27 17" src="https://github.com/laibaaac/browser-t/assets/94360732/6964a4ff-a2ee-4a5c-9acf-c80a7a3b4a97">
 
-img
+
 
 #### Tools
 - Express.js 
@@ -541,8 +547,9 @@ Zonder css **wel** mogelijk:
 - Feedback krijgen met de fallback foutmeldingen van de browser
 - De standaard dark en licht modus van de browser
 
+<img width="500" alt="Schermafbeelding 2023-05-26 om 11 28 42" src="https://github.com/laibaaac/browser-t/assets/94360732/f4d2ec92-b250-4c1b-babb-2d2188333303">
 
-img zonder css 
+
 
 
 ### Javascript uitzetten
@@ -557,7 +564,8 @@ Wat is **niet** mogelijk als javascript uitstaat:
 Wat een veel voorkomende situatie kan zijn, is een slechte internet hebben. De gebruiker gaat bijvoorbeeld onder een tunner of zit in de trein met trage verbinding. Kan de gebruiker dan nogsteeds op mijn prototype? 
 Om dit te testen heb ik in mijn netwerk tab in de developer tool, het netwerk op slow 3g geplaatst. Naar andere pagina gaan duurt veelste lang.
 
-img slow
+<img width="500" alt="Schermafbeelding 2023-05-26 om 10 28 34" src="https://github.com/laibaaac/browser-t/assets/94360732/253a3279-a6a3-4000-8152-a5b5fb7f2de7">
+
 
 ### Een Oplossing
 En mogelijke oplossing voor dit probleem zou zijn het formulier progressive web app maken. Daarbij een service worker en manifest.json bestand. Ook nog een hash change event, zo hoeven verschillende pagina's niet geladen worden.
@@ -617,8 +625,10 @@ Volgens de WCAG (Web Content accessibilty guidelines) moet de kleurcontrasten te
 Ik heb met verschillende tools bekeken als mijn kleur contrast klopt. 
 Zie hier fotos
 
-img met contrast
 
+<img width="500" alt="Schermafbeelding 2023-05-26 om 08 02 55" src="https://github.com/laibaaac/browser-t/assets/94360732/11cd0a6e-76b3-4e1d-a38d-431f83a73ae0">
+
+<img width="500" alt="Schermafbeelding 2023-05-26 om 08 03 12" src="https://github.com/laibaaac/browser-t/assets/94360732/7e5106b3-23d4-40c2-8e37-af4c46ecf9c9">
 
 
 ### Muis/Trackpad werkt niet
@@ -690,8 +700,9 @@ Chrome gebruik ik altijd om mijn prototype te testen, dus op chrome weet ik dat 
 - Dark mode en donker modus wordt ondersteund
 - Data wordt opgeslagen in local storage
 
+<img width="500" alt="Schermafbeelding 2023-05-26 om 10 10 00" src="https://github.com/laibaaac/browser-t/assets/94360732/e9922586-ad84-47b4-b7d3-4e267d8b1f79">
 
-img chrome
+
 ---
 
 ### Safari
@@ -706,7 +717,8 @@ Het volgende browser waar ik mijn prototype heb getest is Safari. Ik heb zelf ee
 -  Data wordt opgeslagen in local storage
 
 
-img chrome
+
+<img width="500" alt="Schermafbeelding 2023-05-26 om 11 33 05" src="https://github.com/laibaaac/browser-t/assets/94360732/65dee68a-ee8d-49a2-8e28-8b066191da60">
 
 
 ## Firefox
@@ -719,6 +731,8 @@ Firefox is een browser die ik bijna nooit gebruik, met firefox moet je goed reke
 - Donker modus en licht modus werken goed
 - Data wordt opgeslagen in local storage
 
+<img width="500" alt="Schermafbeelding 2023-05-26 om 11 33 40" src="https://github.com/laibaaac/browser-t/assets/94360732/c935c959-687f-4619-b073-7ff04065174d">
+
 
 ## Samsung Internet
 Samsung Galaxy is een browser voor Samsung apparaten. Samsung gebruik ik zelf ook en samsung internet is ook best een fijne browser. 
@@ -730,6 +744,12 @@ Samsung Galaxy is een browser voor Samsung apparaten. Samsung gebruik ik zelf oo
 - de dark mode wordt niet goed uitgevoerd
 - Data wordt opgeslagen in de local storage
 
+![f35a347d-4c98-4139-8ace-aeb03ad6b4a2](https://github.com/laibaaac/browser-t/assets/94360732/d7e4cb2b-133c-45a3-9bf2-fdf9d2d5095e)
+
+
+![8d4f8bc1-f643-4404-9300-b3ca8db19f86](https://github.com/laibaaac/browser-t/assets/94360732/46f694d3-8c25-4266-9ac4-72a17538a1a6)
+
+
 
 ### PrinceXML
 De laatste browser is de obsecure browser princexml. We kregen de opdracht om een obsecure browser te kiezen en daar te testen. Zelf heb ik dit browser ook nooit gebruikt. 
@@ -739,6 +759,10 @@ Princexml zet html en css pagina's om in een pdf bestand (om te printen). Ik heb
 #### Test 1
 Bij de  1e test ging het flink al mis, ik kreeg steeds een error dat het mijn javascript bestand en css bestand niet kan vinden. 
 Ik moest toen op een andere manier in mijn header naar de bestanden navigeren (de css en script bestand verwijzing ernaar weg halen)
+
+<img width="500" alt="Schermafbeelding 2023-05-26 om 09 51 30" src="https://github.com/laibaaac/browser-t/assets/94360732/bd7e6142-5d47-4777-b11b-a5d159b29311">
+
+
 
 ```html
 <!DOCTYPE html>
@@ -761,13 +785,17 @@ Ik moest toen op een andere manier in mijn header naar de bestanden navigeren (d
    
 </head>
 ```
-img pagina
+
+<img width="500" alt="Schermafbeelding 2023-05-26 om 09 51 35" src="https://github.com/laibaaac/browser-t/assets/94360732/e5f3f220-1eca-42b1-aff8-2f4e732720b6">
+
+
 
 ### Test 2
 
 Hier kon ik mijn pagina wel zien, alleen wordt mijn javascript niet ondersteund en ook mijn nav zie je bij small screen, dat had ik uitstaan. 
 
-img pagina
+<img width="500" alt="Schermafbeelding 2023-05-26 om 10 08 10" src="https://github.com/laibaaac/browser-t/assets/94360732/c1a9fbc6-a6c4-4bfd-8117-8c874de8cceb">
+
 
 
 
