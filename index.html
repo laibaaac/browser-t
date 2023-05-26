@@ -51,7 +51,9 @@
                     name="voornaam" 
                     id="voornaam" 
                     placeholder="Vul jouw voornaam in" 
-                    aria-placeholder="Vul jouw voornaam in">
+                    aria-placeholder="Vul jouw voornaam in"
+                    required
+                    >
                    
             </label>
             
@@ -62,7 +64,8 @@
                     name="achternaam" 
                     id="achternaam" 
                     placeholder="Vul jouw achternaam  in" 
-                    aria-placeholder="Vul jouw achternaam in">
+                    aria-placeholder="Vul jouw achternaam in"
+                    required>
                    
             </label>
             
@@ -76,10 +79,11 @@
                     aria-placeholder="De nummer bestaat uit 9 cijfers" 
                     minlength="1" 
                     maxlength="9"  
-                    oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                    required>
                     <!-- een beetje vies gespeeld, maar ik gebruik een stukje javascript hier,
                      om alleen cijfers erin te laten -->
-                     
+                   
             </label>
 
             
@@ -93,8 +97,10 @@
                     name="email"
                     id="email" 
                     placeholder="Vul hier jouw email in"
-                    aria-placeholder="Vul hier jouw email in">
-                    <span class="message"></span>
+                    aria-placeholder="Vul hier jouw email in"
+                    required
+                    >
+                    
             </label>
 
         </fieldset>
@@ -103,7 +109,7 @@
 
     </form>
     
-    <p>1/8</p>
+    <p tabindex="0">1/8</p>
 </main>
 
 </body>

@@ -35,6 +35,9 @@ body {
     background-color: var(--background-color);
 }
 
+h1, h2, h3, legend, label, p, fieldset, input, textarea, button, li, ol, ul, a, span, div, form, nav {
+    font-family: "interstate", sans-serif;
+}
 form {
     background-color: var(--fieldset-color);
     padding: 1em;
@@ -191,6 +194,9 @@ br {
   font-weight: bold;
   color: var(--valid-form-data-kleur);
 }
+
+
+
 
 #vak fieldset ul {
   display: flex;
@@ -397,4 +403,23 @@ label {
         }
       
       
-      
+      #end {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+        margin-top: 10em;
+        font-weight: bold;
+      }
+
+        #end main {
+            background-color: var(--fieldset-color);
+            height: auto;
+            width: 50vw;
+        }
+    
+
+        nav ol li a:visited {
+            text-decoration: none;
+          }
+          
