@@ -8,10 +8,54 @@ Zie mijn proces hieronder
 
 ---
 ## Inhoudsopgave
-
-
-
-
+ - [Concept](#concept)
+- [Job story](#job-story)
+- [Functionaliteiten](#functionaliteiten)
+  * [Core functionaliteiten](#core-functionaliteiten)
+  * [Browsers (testen):](#browsers--testen--)
+- [Criteria](#criteria)
+  * [1. Niet alle formuliervelden in een keer laten zien](#1-niet-alle-formuliervelden-in-een-keer-laten-zien)
+  * [2. Formulier validatie](#2-formulier-validatie)
+    + [Formulier validatie met HTML](#formulier-validatie-met-html)
+    + [Formulier valideren  met CSS](#formulier-valideren--met-css)
+  * [3. in local storage data opslaan en weer terug kunnen gaan](#3-in-local-storage-data-opslaan-en-weer-terug-kunnen-gaan)
+    + [Wat gebeurdt er al de javascript dan uit staat](#wat-gebeurdt-er-al-de-javascript-dan-uit-staat)
+  * [4. Terug en naar de volgende vragen kunnen gaan](#4-terug-en-naar-de-volgende-vragen-kunnen-gaan)
+  * [5. Geen zichtbare radio buttons](#5-geen-zichtbare-radio-buttons)
+  * [6. Dark / light mode](#6-dark---light-mode)
+- [Progressive enhancement](#progressive-enhancement)
+- [Server](#server)
+    + [Tools](#tools)
+    + [Stappen](#stappen)
+    + [Feedback](#feedback)
+- [Testen](#testen)
+- [Getestte features](#getestte-features)
+  * [CSS Uitzetten](#css-uitzetten)
+  * [Javascript uitzetten](#javascript-uitzetten)
+  * [Slechte internet verbinding](#slechte-internet-verbinding)
+  * [Een Oplossing](#een-oplossing)
+  * [Custom fonts](#custom-fonts)
+  * [Contrast](#contrast)
+  * [Muis/Trackpad werkt niet](#muis-trackpad-werkt-niet)
+    + [Wat nog niet helemaal werkt](#wat-nog-niet-helemaal-werkt)
+  * [Screenreader test](#screenreader-test)
+  * [Bevindingen](#bevindingen)
+    + [Studentgegevens](#studentgegevens)
+    + [Vak formulier](#vak-formulier)
+- [Browsers](#browsers)
+  * [Chrome](#chrome)
+    + [Notities](#notities)
+- [img chrome](#img-chrome)
+  * [Safari](#safari)
+    + [Notities](#notities-1)
+- [Firefox](#firefox)
+    + [Notities](#notities-2)
+- [Samsung Internet](#samsung-internet)
+  * [Bevindingen](#bevindingen-1)
+  * [PrinceXML](#princexml)
+    + [Test 1](#test-1)
+  * [Test 2](#test-2)
+- [Bronnen](#bronnen)
 
 
 ---
@@ -319,7 +363,7 @@ Simpel gezegd, dan wordt er geen data opgeslagen in de localstorage. localstorag
 
 
 
-## 4. Terug en naar de volgende vragen kunnen gaan
+### 4. Terug en naar de volgende vragen kunnen gaan
 Ik heb ik mijn prototype zo goed mogelijk geprobeerd om de gebruiker op weg te helpen met het navigeren van de website. 
 De gebruiker kan door 2 manieren naar de vorige/ volgende vragen gaan. 
 1. Navigatie, met een class op elke pagina te zetten om te laten zien waar de gebruiker is en dat die terug of naar de volgende vragen kan gaan. 
@@ -327,7 +371,7 @@ De gebruiker kan door 2 manieren naar de vorige/ volgende vragen gaan.
 
 ---
 
-## 5. Geen zichtbare radio buttons
+### 5. Geen zichtbare radio buttons
 
 In de enquête moet je per vak de lesstof, uitleg en eigen inzicht beoordelen met een schaal van 1 tot 10. Wij moesten een creatieve manier bedenken om de radio buttons niet te laten zien. Als de css uit staat zie alles onder elkaar en ga je natuurlijk de radio buttons zien, maar met css heb ik geprobeerd de radio button op een andere manier te stylen. 
 
@@ -350,7 +394,7 @@ input[type="radio"] {
 
 ---
 
-## 6. Dark / light mode
+### 6. Dark / light mode
 Nog een criteria was dat het formulier een light/ dark mode moet hebben, dit houdt in dat de kleuren/ contrast veranderd naarmate hoe donker het wordt (dag naar nacht). Ik heb hier ook het principe van progressive enhancement proberen toe te voegen. Ik heb zowel in mijn html  `<meta name="color-scheme" content="light dark">` als css (zie hieronder) de dark/ light mode toegepast. Als mijn css uit staat dan heb ik tenminste de fallback vanuit de html. 
  
  img light 
@@ -741,7 +785,7 @@ prince: styling.css: warning: unsupported properties: gap, place-content
 
 
 ---
-# Bronnen
+## Bronnen
 - Will node.js work if JavaScript is disabled? (z.d.). Quora. https://www.quora.com/Will-node-js-work-if-JavaScript-is-disabled
 - Bland, J. (2019, 7 mei). Using Node.js & Express.js to save data to MongoDB Database. Medium. https://codeburst.io/hitchhikers-guide-to-back-end-development-with-examples-3f97c70e0073
 
